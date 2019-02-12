@@ -16,7 +16,7 @@ class CardBehavior: UIDynamicBehavior {
         return behavior
     }()
     
-    lazy var itemBehavior :UIDynamicItemBehavior = {
+    lazy var itemBehavior :UIDynamicItemBehavior = { // for behavior that result from other behaviors
         let behavior = UIDynamicItemBehavior()
         behavior.elasticity = 1.0 //dont gain energy or lose energy just keep moving normal (fly) if it become 1.1 it faste
         behavior.resistance = 0

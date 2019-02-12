@@ -52,7 +52,7 @@ class ViewController: UIViewController {
             if let chosenView =  recognizer.view as? PlayingCardView ,faceUpCardViews.count<2 {
                 lastChosenCardView = chosenView
                 
-                cardBehavior.removeItem(chosenView)
+                cardBehavior.removeItem(chosenView) //to stop moving it
                 UIView.transition(with: chosenView,
                                   duration: 0.6,
                                   options: [.transitionFlipFromLeft],
@@ -93,7 +93,7 @@ class ViewController: UIViewController {
                                                 })
                                         })
                                     }
-                                    else if cardsToMatch.count == 2 {   //not matched cards
+                                    else if cardsToMatch.count == 2 {   //not matched cards //face down
                                         if self.lastChosenCardView == chosenView { //in slow movement behaviors intersect so we mark it with second one
                                             cardsToMatch.forEach({ playingcard in
                                                 UIView.transition(with: playingcard,
@@ -110,7 +110,7 @@ class ViewController: UIViewController {
                                      
                                         
                                     }else{
-                                        if !chosenView.isFaceUp{
+                                        if !chosenView.isFaceUp{ //press on one
                                             self.cardBehavior.addItem(chosenView)
                                         }
                                     }
