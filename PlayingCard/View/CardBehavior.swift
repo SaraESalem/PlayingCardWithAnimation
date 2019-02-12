@@ -32,7 +32,7 @@ class CardBehavior: UIDynamicBehavior {
 //            push.dynamicAnimator?.removeBehavior(push) //remove from animator
             self?.removeChildBehavior(push) //remove push once it happens 3l4an keda btbt2 fel a5er
         }
-        addChildBehavior(push)
+        addChildBehavior(push)  //addbehavior with animator && addChildBehavior in sub class of UIDynamicBehavior
     }
     
     func addItem(_ item:UIDynamicItem){
